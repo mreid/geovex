@@ -6,12 +6,12 @@ import org.junit.Test;
 
 public class ConverterTest {
 
-	public Converter convert = new Converter();
+	public Converter convert = new ROCSIConverter();
 	
 	@Test
 	public void testToSIPoint() {
-		assertEquals(new GVPoint(0.5, 0.25), convert.toSIPoint(new GVLine(1,-1,0)));
-		assertEquals(new GVPoint(0.5, 0.125), convert.toSIPoint(new GVLine(1,-1,-0.5)));
+		assertEquals(new SpecPoint(0.5, 0.25), convert.toPoint(new SpecLine(1,-1,0)));
+		assertEquals(new SpecPoint(0.5, 0.125), convert.toPoint(new SpecLine(1,-1,-0.5)));
 	}
 
 	@Test
