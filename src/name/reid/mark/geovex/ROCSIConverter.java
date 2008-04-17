@@ -4,12 +4,18 @@ public class ROCSIConverter extends Converter {
 
 	private float pi = 0.5f;
 
+	public float getPrior() { return pi; }
+	
+	public void setPrior(float prior) {
+		this.pi = prior;
+	}
+
 	@Override
 	public GLine toLine(GPoint point) {
 		float fn = 1 - point.getY();
 		float fp = point.getX();
 
-		return new SpecLine(1, -1*((1-pi)*fp - pi*fn), pi*fn);
+		return new SpecLine((pi*fn - (1-pi)*fp), 1, pi*fn);
 	}
 
 	@Override

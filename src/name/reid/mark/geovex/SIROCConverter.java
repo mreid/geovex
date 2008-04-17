@@ -10,6 +10,12 @@ public class SIROCConverter extends Converter {
 
 	private float pi = 0.5f;
 
+	public float getPrior() { return pi; }
+	
+	public void setPrior(float prior) {
+		this.pi = prior;
+	}
+	
 	public GPoint toPoint(GLine siLine) {
 		float l0 = siLine.atX(0.0f);
 		float m  = siLine.slope();
