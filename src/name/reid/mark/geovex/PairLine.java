@@ -11,6 +11,11 @@ public class PairLine extends GLine {
 	}
 	
 	@Override
+	public boolean isLAI() {
+		return start.isPAI() || end.isPAI();
+	}
+	
+	@Override
 	public float getA() {
 		return end.getY() - start.getY();
 	}

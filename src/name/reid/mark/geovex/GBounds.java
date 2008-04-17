@@ -14,6 +14,12 @@ public class GBounds {
 		this.ymin = ymin;
 	}
 	
+	public boolean inside(GPoint point) {
+		float x = point.getX();
+		float y = point.getY();
+		return (xmin <= x && x <= xmax && ymin <= y && y <= ymax);
+	}
+	
 	public GSegment clip(GLine line) {
 		float x0 = xmin;
 		float x1 = xmax;
@@ -30,6 +36,6 @@ public class GBounds {
 			x1 = line.atY(y1);
 		}
 		
-		return new GSegment(new SpecPoint(x0, y0), new SpecPoint(x1, y1));
-	}
+		return new SpecSegment(new SpecPoint(x0, y0), new SpecPoint(x1, y1));
+	}	
 }

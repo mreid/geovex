@@ -4,32 +4,39 @@ import java.util.ArrayList;
 
 public class SpecCurve extends GCurve {
 
-	private final ArrayList<GPoint> myPoints = new ArrayList<GPoint>();
+	private final ArrayList<SpecSegment> mySegments = new ArrayList<SpecSegment>();
 
-	public void add(int position, float x, float y) {
-		add(position, new SpecPoint(x, y));
+	public SpecCurve() {
+		this(new SpecSegment(GPoint.PAI, GPoint.PAI));
+	}
+	
+	public SpecCurve(SpecSegment segment) {
+		mySegments.add(segment);
 	}
 	
 	public void add(float x, float y) {
 		add(new SpecPoint(x,y));
 	}
 	
-	public void add(int position, GPoint point) {
-		myPoints.add(position, point);
+	public void add(GPoint point) {
+		int lastIndex = mySegments.size() - 1;
+		SpecSegment last = mySegments.remove(lastIndex);
+		mySegments.add(new SpecSegment(last.start, point));
+		mySegments.add(new SpecSegment(point, last.end));
+	}
+
+	public boolean isEmpty() {
+		return mySegments.isEmpty();
 	}
 	
-	public void add(GPoint point) {
-		myPoints.add(point);
-	}
-
 	@Override
-	public GPoint getPoint(int index) {
-		return myPoints.get(index);
+	public SpecSegment getSegment(int index) {
+		return mySegments.get(index);
 	}
-
+	
 	@Override
 	public int size() {
-		return myPoints.size();
+		return mySegments.size();
 	}
 
 }

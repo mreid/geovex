@@ -10,10 +10,11 @@ public class DualCurve extends GCurve {
 	}
 
 	@Override
-	public GPoint getPoint(int index) {
-		return new DualPoint(myCurve.getSegment(index).line, myConverter);
+	public GSegment getSegment(int index) {
+		return new DualSegment(myCurve.getSegment(index), myConverter);
+		
 	}
-
+	
 	@Override
 	public int size() {
 		return myCurve.size();

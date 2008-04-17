@@ -2,11 +2,19 @@ package name.reid.mark.geovex;
 
 public abstract class GLine {
 	
+	// Represents a line with solutions "at infinity"
+	public static final GLine LAI = new SpecLine(0, 0, 1);
+	
 	public static final float TOLERANCE = 0.0001f;
 	
 	public abstract float getA();
 	public abstract float getB();
 	public abstract float getC();
+	
+	public boolean isLAI() {
+		return this == LAI;
+	}
+	
 	/**
 	 * @return The slope of this line.
 	 */
@@ -56,6 +64,7 @@ public abstract class GLine {
 	
 	@Override
 	public String toString() { 
+		if(isLAI()) return "Line: (LAI)";
 		String result = "Line: " + getA() + "X + " + getB() + "Y = " + getC();
 		return result; 
 	}
