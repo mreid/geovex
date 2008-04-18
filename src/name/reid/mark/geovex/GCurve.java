@@ -19,7 +19,6 @@ public abstract class GCurve {
 		}
 	}
 
-	@Override
 	public String toString() {
 		String result = "Curve Points:";
 		for(int i = 0 ; i < size() ; i++) {

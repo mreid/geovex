@@ -10,22 +10,18 @@ public class PairLine extends GLine {
 		this.end = end;
 	}
 	
-	@Override
 	public boolean isLAI() {
 		return start.isPAI() || end.isPAI();
 	}
-	
-	@Override
+
 	public float getA() {
 		return end.getY() - start.getY();
 	}
 
-	@Override
 	public float getB() {
 		return start.getX() - end.getX();
 	}
 
-	@Override
 	public float getC() {
 		return getA()*start.getX() + getB()*start.getY();
 	}

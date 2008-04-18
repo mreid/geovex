@@ -10,7 +10,6 @@ public class ROCSIConverter extends Converter {
 		this.pi = prior;
 	}
 
-	@Override
 	public GLine toLine(GPoint point) {
 		float fn = 1 - point.getY();
 		float fp = point.getX();
@@ -18,7 +17,6 @@ public class ROCSIConverter extends Converter {
 		return new SpecLine((pi*fn - (1-pi)*fp), 1, pi*fn);
 	}
 
-	@Override
 	public GPoint toPoint(GLine line) {
 		float m = line.slope();
 		float cost = (line.isVertical() ? 1.0f : pi*m/(pi*m + (1-pi)));

@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class SpecCurve extends GCurve {
 
-	private final ArrayList<SpecSegment> mySegments = new ArrayList<SpecSegment>();
+	private final ArrayList mySegments = new ArrayList();
 
 	public SpecCurve() {
 		this(new SpecSegment(GPoint.PAI, GPoint.PAI));
@@ -20,21 +20,19 @@ public class SpecCurve extends GCurve {
 	
 	public void add(GPoint point) {
 		int lastIndex = mySegments.size() - 1;
-		SpecSegment last = mySegments.remove(lastIndex);
-		mySegments.add(new SpecSegment(last.start, point));
-		mySegments.add(new SpecSegment(point, last.end));
+		GSegment last = (GSegment) mySegments.remove(lastIndex);
+		mySegments.add(new SpecSegment(last.getStart(), point));
+		mySegments.add(new SpecSegment(point, last.getEnd()));
 	}
 
 	public boolean isEmpty() {
 		return mySegments.isEmpty();
 	}
 	
-	@Override
-	public SpecSegment getSegment(int index) {
-		return mySegments.get(index);
+	public GSegment getSegment(int index) {
+		return (GSegment) mySegments.get(index);
 	}
 	
-	@Override
 	public int size() {
 		return mySegments.size();
 	}

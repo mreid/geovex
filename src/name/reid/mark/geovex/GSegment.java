@@ -5,7 +5,6 @@ public abstract class GSegment {
 	public abstract GPoint getEnd();
 	public abstract GLine getLine();
 	
-	@Override
 	public String toString() {
 		return getStart() + "--" + getEnd() + " | " + getLine();
 	}

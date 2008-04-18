@@ -10,12 +10,10 @@ public class DualPoint extends GPoint {
 		myConverter = converter;
 	}
 	
-	@Override
 	public float getX() {
 		return myConverter.toPoint(myLine).getX();
 	}
 
-	@Override
 	public float getY() {
 		return myConverter.toPoint(myLine).getY();
 	}

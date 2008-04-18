@@ -9,13 +9,11 @@ public class DualCurve extends GCurve {
 		myConverter = converter;
 	}
 
-	@Override
 	public GSegment getSegment(int index) {
 		return new DualSegment(myCurve.getSegment(index), myConverter);
 		
 	}
 	
-	@Override
 	public int size() {
 		return myCurve.size();
 	}

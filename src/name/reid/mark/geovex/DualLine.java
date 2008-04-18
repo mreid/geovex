@@ -10,17 +10,14 @@ public class DualLine extends GLine {
 		myConverter = converter;
 	}
 	
-	@Override
 	public float getA() {
 		return myConverter.toLine(myPoint).getA();
 	}
 
-	@Override
 	public float getB() {
 		return myConverter.toLine(myPoint).getB();
 	}
 
-	@Override
 	public float getC() {
 		return myConverter.toLine(myPoint).getC();
 	}

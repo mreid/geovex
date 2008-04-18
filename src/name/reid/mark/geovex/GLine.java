@@ -40,7 +40,6 @@ public abstract class GLine {
 	 * Two lines are equal if their slopes and intercepts are the same (up to
 	 * differences smaller than a specific tolerance (See TOLERANCE field).
 	 */
-	@Override
 	public boolean equals(Object obj) {
 		if(! (obj instanceof GLine)) return false;
 		
@@ -62,7 +61,6 @@ public abstract class GLine {
 		}
 	}
 	
-	@Override
 	public String toString() { 
 		if(isLAI()) return "Line: (LAI)";
 		String result = "Line: " + getA() + "X + " + getB() + "Y = " + getC();
