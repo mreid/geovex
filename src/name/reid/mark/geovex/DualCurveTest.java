@@ -1,9 +1,10 @@
 package name.reid.mark.geovex;
 
+import junit.framework.TestCase;
 
-public class DualCurveTest {
 
-//	@Test
+public class DualCurveTest extends TestCase {
+
 	public void testGetPoint() {
 		ROCSIConverter convert = new ROCSIConverter();
 		SpecCurve c = new SpecCurve();
@@ -11,7 +12,7 @@ public class DualCurveTest {
 		c.add(1,1);
 		
 		GCurve dual = new DualCurve(c, convert);
-//		assertEquals("Size", 3, dual.size());
+		assertEquals("Size", 3, dual.size());
 		System.out.println("Prior = " + convert.getPrior());
 		System.out.println("Primary: " + c);
 		System.out.println("Dual: " + dual);

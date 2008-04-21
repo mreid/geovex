@@ -1,10 +1,10 @@
 package name.reid.mark.geovex;
 
+import junit.framework.TestCase;
 
-public class GLineTest {
 
-	/*
-	@Test
+public class GLineTest extends TestCase {
+
 	public void testSlope() {
 		// Line representing Y = X;
 		GLine line = new SpecLine(1, -1, 0);
@@ -47,7 +47,6 @@ public class GLineTest {
 		assertEquals("Slope of " + line, -1.0, line.slope(), GLine.TOLERANCE);		
 	}
 
-	@Test
 	public void testIntercept() {
 		// Line representing Y = X;
 		GLine line = new SpecLine(1, -1, 0);
@@ -66,7 +65,6 @@ public class GLineTest {
 		assertEquals("Intercept of " + line, 5.0, line.intercept(), GLine.TOLERANCE);
 	}
 
-	@Test
 	public void testIsVertical() {
 		// Line representing X = 0 is vertical;
 		GLine line = new SpecLine(1, 0, 0);
@@ -101,7 +99,6 @@ public class GLineTest {
 		assertTrue(line + " is vertical", line.isVertical());
 	}
 
-	@Test
 	public void testEquals() {
 		GLine l1 = new SpecLine(1, -1, 0);
 		GLine l2 = new SpecLine(2, -2, 0);
@@ -127,5 +124,4 @@ public class GLineTest {
 		l2 = new SpecLine(2, -2.000001, 20.000001);
 		assertEquals(l1 + " = " + l2, l1, l2);
 	}
-	*/
 }
