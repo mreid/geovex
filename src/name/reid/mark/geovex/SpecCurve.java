@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class SpecCurve extends GCurve {
 
-	private final ArrayList mySegments = new ArrayList();
+	private final ArrayList<Object> mySegments = new ArrayList<Object>();
 
 	public SpecCurve() {
 		this(new SpecSegment(GPoint.PAI, GPoint.PAI));
